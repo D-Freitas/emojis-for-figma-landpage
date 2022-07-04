@@ -1,0 +1,344 @@
+@font-face {
+  font-family: UbuntuBold;
+  src: url(../fonts/ubuntu/Ubuntu-Bold.ttf);
+}
+
+@font-face {
+  font-family: UbuntuBoldItalic;
+  src: url(../fonts/ubuntu/Ubuntu-BoldItalic.ttf);
+}
+
+@font-face {
+  font-family: UbuntuLight;  
+  src: url(../fonts/ubuntu/Ubuntu-Light.ttf);
+}
+
+@font-face {
+  font-family: UbuntuLightItalic;
+  src: url(../fonts/ubuntu/Ubuntu-LightItalic.ttf);
+}
+
+@font-face {
+  font-family: UbuntuLightMedium;
+  src: url(../fonts/ubuntu/Ubuntu-Medium.ttf);
+}
+
+@font-face {
+  font-family: UbuntuLightMediumItalic;
+  src: url(../fonts/ubuntu/Ubuntu-MediumItalic.ttf);
+}
+
+@font-face {
+  font-family: UbuntuRegular;
+  src: url(../fonts/ubuntu/Ubuntu-Regular.ttf);
+}
+
+@font-face {
+  font-family: UbuntuItalic;
+  src: url(../fonts/ubuntu/Ubuntu-Italic.ttf);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+ol li, ul li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  appearance: none;
+}
+
+header .desktop-navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 60px;
+}
+
+header .desktop-navbar > .brand {
+  display: block;
+  width: 54px;
+}
+
+header .desktop-navbar > .links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+header .desktop-navbar > .links > li {
+  position: relative;
+  margin: 0 30px;
+}
+
+header .desktop-navbar > .links > li > a {
+  font-family: UbuntuRegular;
+  font-size: 18px;
+  color: #000;
+}
+
+header .desktop-navbar > .links > li > a::after {
+  content: "";
+  position: absolute;
+  display: block;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% + 25px);
+  height: 2.5px;
+  background: #e947f4;
+  bottom: -10px;
+  opacity: 0;
+}
+
+header .desktop-navbar > .links > li > a:hover::after {
+  transition: bottom 0.5s, opacity 0.5s;
+  bottom: -6px;
+  opacity: 1;
+}
+
+header .desktop-navbar > .user-panel {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+header .desktop-navbar > .user-panel > .button--signup {
+  position: relative;
+  background: transparent;
+  color: #000;
+  border-radius: 15px;
+  padding: 12px 30px 14px;
+  font-size: 18px;
+  line-height: 1;
+  border: 3.15px solid #9465F9;
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+  user-select: none;
+  white-space: nowrap;
+  transition: bottom 200ms ease 0s;
+  bottom: 0;
+}
+
+header .desktop-navbar > .user-panel > .button--signup:hover {
+  bottom: 2px;
+}
+
+header .desktop-navbar > .user-panel > .button--signin {
+  position: relative;
+  background: #000;
+  color: #fff;
+  border-radius: 15px;
+  padding: 12px 22px 14px;
+  margin: 0 30px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+  border: 3.15px solid #000;
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+  user-select: none;
+  white-space: nowrap;
+  transition: bottom .2s;
+  bottom: 0;
+}
+
+header .desktop-navbar > .user-panel > .button--signin:hover {
+  bottom: 2px;
+}
+
+header .desktop-navbar > .user-panel > .open-burger {
+  display: none;
+  cursor: pointer;
+}
+
+@media (max-width: 1002px) {
+  header .desktop-navbar {
+    padding: 30px;
+  }
+
+  header .desktop-navbar > .links {
+    display: none;
+  }
+
+  header .desktop-navbar > .user-panel > .button--signup {
+    display: none;
+  }
+
+  header .desktop-navbar > .user-panel > .button--signin {
+    margin: auto 15px;
+  }
+
+  header .desktop-navbar > .user-panel > .open-burger {
+    display: block;
+  }
+}
+
+header .mobile-navbar {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% - 60px);
+  height: calc(100% - 60px);
+  padding: 30px;
+  background-color: #fff;
+  z-index: 2;
+}
+
+header .mobile-navbar > .brand {
+  display: block;
+  width: 54px;
+  margin-bottom: 40px;
+}
+
+header .mobile-navbar > .links {
+  display: block;
+  width: 500px;
+}
+
+header .mobile-navbar > .links > li > a {
+  font-family: UbuntuRegular;
+  color: inherit;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  padding: 6px 0;
+  font-size: 20px;
+  height: 30px;
+  width: 100px;
+}
+
+header .mobile-navbar > .links > li > a:hover {
+  text-decoration: underline;
+}
+
+header .mobile-navbar > .links > .button--signin {
+  position: relative;
+  font-family: UbuntuRegular;
+  background: rgb(0, 0, 0) none repeat scroll 0% 0%;
+  color: rgb(255, 255, 255);
+  display: inline-block;
+  border-radius: 10px;
+  padding: 14px 24px 16px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+  border: 0 none;
+  cursor: pointer;
+  user-select: none;
+  transition: bottom 200ms ease 0s;
+  text-align: center;
+  margin-top: 24px;
+  bottom: 0;
+}
+
+header .mobile-navbar > .links > .button--signin:hover {
+  bottom: 2px;
+}
+
+header .mobile-navbar > .close-burger {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  cursor: pointer;
+}
+
+header > #burger {
+  display: none;
+}
+
+header > #burger:checked ~ .mobile-navbar {
+  display: block;
+}
+
+section .announcement {
+  position: relative;
+  top: 60px;
+  left: 60px;
+  width: 578px;
+}
+
+@media (max-width: 698px) {
+  section .announcement {
+    top: 30px;
+    text-align: center;
+    left: 0;
+    width: 100%;
+  }
+}
+
+section .announcement > .text--big {
+  font-family: UbuntuBold;
+  font-size: 64px;
+}
+
+section .announcement > .text--small {
+  margin-top: 25px;
+  font-family: UbuntuLight;
+  font-size: 24px;
+}
+
+section .announcement > .btn--download {
+  background: linear-gradient(89.01deg, #fe2B97 5.85%, #fb3af8 34.97%, #df42ec 78.13%, #9465f9 105.68%, rgb(217, 217, 217) 105.69%);
+  border: 0;
+  font-weight: 700; 
+  font-size: 30px;
+  margin-top: 90px;
+  padding: 15px 40px;
+  border: 6.30347px solid #fff;
+  border-radius: 20px;
+  filter: drop-shadow(0px 25.2139px 44.1243px rgba(1, 1, 1, 0.3));
+  cursor: pointer;
+  color: #fff;
+  transform: scale(1);
+  transition: transform 0.5s;
+}
+
+section .announcement > .btn--download:hover {
+  transform: scale(1.05);
+}
+
+section .announcement > .btn--download:active {
+  transition: transform 0.3s;
+  transform: scale(0.98);
+}
+
+figure .illustrations {
+  position: absolute;
+  overflow: hidden;
+  width: 800px;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: -1;
+}
+
+figure .illustrations > .emojis-river {
+  position: absolute;
+  right: -180px;
+  top: -64px;
+  z-index: 1;
+}
+
+figure .illustrations > .emojis {
+  position: absolute;
+  top: 200px;
+  z-index: 2;
+}
+
+@media (max-height: 760px) {
+  section > .announcement > .btn--download {
+    margin-bottom: 100px;
+  }
+
+  figure {
+    display: none;
+  }
+}
